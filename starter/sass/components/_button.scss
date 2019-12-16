@@ -1,0 +1,59 @@
+.btn {
+  
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block; /* inline-block elements are treated as text with regard to positioning */
+    border-radius: 10rem;
+    transition: all .2s; /* transition property has to be on the initial state */
+    position: relative;
+    font-size: 1.6rem;
+  }
+  
+  &:hover {
+    transform:translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black,.2); /* X direction, Y direction, blur, color */
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6); 
+      opacity: 0;
+    }
+  }
+  
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+  }
+  
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+  
+  /* after pseudo-element is treated like a child of the button */
+  &::after {
+    content: ""; /* Have to specify content even if its empty or the pseudo-element won't appear */
+    display: inline-block; /* Have to specify display too */
+    height: 100%; /* (100% of the width of the parent button */
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute; /* Need this to be relative to the parent button, not the header, so need to add position:relative to button */
+    top: 0;
+    left: 0;
+    z-index: -1;
+  
+    transition: all .4s;
+  }
+  
+  &--animated {
+    animation: moveInButton .5s ease-out .75s;
+    animation-fill-mode: backwards; /* Automatically applies properties of animation 0% before it starts */
+  }
+
+}

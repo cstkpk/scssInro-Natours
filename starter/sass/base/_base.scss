@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* root font size is set in the html */
+/* Common practice is to set html font size to 10px and then use rem everywhere else,
+dividing what the px would be by 10 (30px is 3rem) */
+/* And then set the font size to a percentage 
+(setting it to px is bad practice because it overrides any default size the user has set */
+/* We set it to the percentage of the default font size, which is usually 16px (So here we do 10/16) */
+html {
+  // This defines what 1rem is
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
