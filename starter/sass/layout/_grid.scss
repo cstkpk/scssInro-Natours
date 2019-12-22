@@ -1,6 +1,5 @@
 .row {
   max-width: $grid-width; /* Standard is a width of 1140px */
-  background-color: #eee;
   margin: 0 auto; /* Easy way to center block element inside of another block element */
   
   &:not(:last-child) {
@@ -13,7 +12,6 @@
   // *= selects any class that contains col-
   // $= selects any class that ends with col-
   [class^="col-"] {
-    background-color: orangered;
     float: left;
     
     &:not(:last-child) {
